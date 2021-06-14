@@ -52,6 +52,10 @@
 		CC0D2E0426770A0A003D7AF0 /* MusiWeather */ = {
 			isa = PBXGroup;
 			children = (
+				CC0D2E1726770D73003D7AF0 /* ViewModels */,
+				CC0D2E1626770D6E003D7AF0 /* Views */,
+				CC0D2E1526770D69003D7AF0 /* Models */,
+				CC0D2E1426770D63003D7AF0 /* Networking */,
 				CC0D2E0526770A0B003D7AF0 /* MusiWeatherApp.swift */,
 				CC0D2E0726770A0B003D7AF0 /* ContentView.swift */,
 				CC0D2E0926770A0D003D7AF0 /* Assets.xcassets */,
@@ -67,6 +71,34 @@
 				CC0D2E0C26770A0E003D7AF0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CC0D2E1426770D63003D7AF0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CC0D2E1526770D69003D7AF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CC0D2E1626770D6E003D7AF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC0D2E1726770D73003D7AF0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
