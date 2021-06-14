@@ -16,8 +16,8 @@ struct LoginView: View {
                 Spacer()
                 Image("musiweatherLogo")
                     .padding(.top, 20)
-                Spacer()
-                Spacer()
+//                Spacer()
+                Spacer(minLength: 530)
             }
             VStack {
                 Spacer(minLength: 675)
