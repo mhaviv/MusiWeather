@@ -13,7 +13,8 @@ struct MusiWeatherView: View {
             Image("musiweatherBGImage")
                 .resizable()
             VStack {
-                VStack{
+                Spacer(minLength: 55)
+                VStack {
                     Text("Showing Weather in")
                         .padding(.bottom, 10)
                         .font(.custom("Avenir", size: 12).weight(.medium))
@@ -34,6 +35,7 @@ struct MusiWeatherView: View {
                     }
                 }
                 .padding(.bottom, 3)
+                
                 HStack {
                     Spacer(minLength: 20)
                     VStack {
