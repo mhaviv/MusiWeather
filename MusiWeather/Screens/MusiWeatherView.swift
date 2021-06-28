@@ -81,195 +81,22 @@ struct MusiWeatherView: View {
                         
                         
                     }
-                        .padding()
-                        .background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black]), startPoint: .top, endPoint: .bottom)).opacity(0.4))
-                        .shadow(color: Color.white.opacity(0.1), radius: 2, x: -2, y: -2)
-                        .shadow(color: Color.black.opacity(0.2), radius: 2, x: 2, y: 2)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black]), startPoint: .top, endPoint: .bottom)).opacity(0.4))
+                    .shadow(color: Color.white.opacity(0.1), radius: 2, x: -2, y: -2)
+                    .shadow(color: Color.black.opacity(0.2), radius: 2, x: 2, y: 2)
+                    
                     Spacer(minLength: 20)
                 }
                 ScrollView {
                     VStack (spacing: 12) {
-                        HStack {
-                            Image("sampleAlbumArt")
-                                .resizable()
-                                .frame(width: 50, height: 50, alignment: .center)
-                            
-                            VStack (alignment: .leading) {
-                                Text("Life In The City")
-                                    .font(.custom("Avenir", size: 16).weight(.heavy))
-                                Text("The Lumineers")
-                                    .font(.custom("Avenir", size: 12).weight(.light))
-                                Text("3:51")
-                                    .font(.custom("Avenir", size: 12).weight(.heavy))
-                            }
-                            .foregroundColor(.white)
-                            
-                            Spacer()
-                            
-                            Image(systemName: "pause.circle")
-                                .foregroundColor(.white)
-                                .font(.custom("Avenir", size: 30).weight(.medium))
-                            
-                        }
-                        .padding(10)
-                        .background(Color("musiweatherOrange"))
-                        .cornerRadius(10)
-                        
-                        HStack {
-                            Image("sampleAlbumArt")
-                                .resizable()
-                                .frame(width: 50, height: 50, alignment: .center)
-                            
-                            VStack (alignment: .leading) {
-                                Text("Life In The City")
-                                    .font(.custom("Avenir", size: 16).weight(.heavy))
-                                Text("The Lumineers")
-                                    .font(.custom("Avenir", size: 12).weight(.light))
-                                Text("3:51")
-                                    .font(.custom("Avenir", size: 12).weight(.heavy))
-                            }
-                            .foregroundColor(.white)
-                            
-                            Spacer()
-                            
-                            Image(systemName: "play.circle")
-                                .foregroundColor(.white)
-                                .font(.custom("Avenir", size: 30).weight(.medium))
-                            
-                        }
-                        .padding(10)
-                        .background(Color("musiweatherOrange"))
-                        .cornerRadius(10)
-                        
-                        HStack {
-                            Image("sampleAlbumArt")
-                                .resizable()
-                                .frame(width: 50, height: 50, alignment: .center)
-                            
-                            VStack (alignment: .leading) {
-                                Text("Life In The City")
-                                    .font(.custom("Avenir", size: 16).weight(.heavy))
-                                Text("The Lumineers")
-                                    .font(.custom("Avenir", size: 12).weight(.light))
-                                Text("3:51")
-                                    .font(.custom("Avenir", size: 12).weight(.heavy))
-                            }
-                            .foregroundColor(.white)
-                            
-                            Spacer()
-                            
-                            Image(systemName: "play.circle")
-                                .foregroundColor(.white)
-                                .font(.custom("Avenir", size: 30).weight(.medium))
-                            
-                        }
-                        .padding(10)
-                        .background(Color("musiweatherOrange"))
-                        .cornerRadius(10)
-                        
-                        HStack {
-                            Image("sampleAlbumArt")
-                                .resizable()
-                                .frame(width: 50, height: 50, alignment: .center)
-                            
-                            VStack (alignment: .leading) {
-                                Text("Life In The City")
-                                    .font(.custom("Avenir", size: 16).weight(.heavy))
-                                Text("The Lumineers")
-                                    .font(.custom("Avenir", size: 12).weight(.light))
-                                Text("3:51")
-                                    .font(.custom("Avenir", size: 12).weight(.heavy))
-                            }
-                            .foregroundColor(.white)
-                            
-                            Spacer()
-                            
-                            Image(systemName: "play.circle")
-                                .foregroundColor(.white)
-                                .font(.custom("Avenir", size: 30).weight(.medium))
-                            
-                        }
-                        .padding(10)
-                        .background(Color("musiweatherOrange"))
-                        .cornerRadius(10)
-                        
-                        HStack {
-                            Image("sampleAlbumArt")
-                                .resizable()
-                                .frame(width: 50, height: 50, alignment: .center)
-                            
-                            VStack (alignment: .leading) {
-                                Text("Life In The City")
-                                    .font(.custom("Avenir", size: 16).weight(.heavy))
-                                Text("The Lumineers")
-                                    .font(.custom("Avenir", size: 12).weight(.light))
-                                Text("3:51")
-                                    .font(.custom("Avenir", size: 12).weight(.heavy))
-                            }
-                            .foregroundColor(.white)
-                            
-                            Spacer()
-                            
-                            Image(systemName: "play.circle")
-                                .foregroundColor(.white)
-                                .font(.custom("Avenir", size: 30).weight(.medium))
-                            
-                        }
-                        .padding(10)
-                        .background(Color("musiweatherOrange"))
-                        .cornerRadius(10)
-                        
-                        HStack {
-                            Image("sampleAlbumArt")
-                                .resizable()
-                                .frame(width: 50, height: 50, alignment: .center)
-                            
-                            VStack (alignment: .leading) {
-                                Text("Life In The City")
-                                    .font(.custom("Avenir", size: 16).weight(.heavy))
-                                Text("The Lumineers")
-                                    .font(.custom("Avenir", size: 12).weight(.light))
-                                Text("3:51")
-                                    .font(.custom("Avenir", size: 12).weight(.heavy))
-                            }
-                            .foregroundColor(.white)
-                            
-                            Spacer()
-                            
-                            Image(systemName: "play.circle")
-                                .foregroundColor(.white)
-                                .font(.custom("Avenir", size: 30).weight(.medium))
-                            
-                        }
-                        .padding(10)
-                        .background(Color("musiweatherOrange"))
-                        .cornerRadius(10)
-                        
-                        HStack {
-                            Image("sampleAlbumArt")
-                                .resizable()
-                                .frame(width: 50, height: 50, alignment: .center)
-                            
-                            VStack (alignment: .leading) {
-                                Text("Life In The City")
-                                    .font(.custom("Avenir", size: 16).weight(.heavy))
-                                Text("The Lumineers")
-                                    .font(.custom("Avenir", size: 12).weight(.light))
-                                Text("3:51")
-                                    .font(.custom("Avenir", size: 12).weight(.heavy))
-                            }
-                            .foregroundColor(.white)
-                            
-                            Spacer()
-                            
-                            Image(systemName: "play.circle")
-                                .foregroundColor(.white)
-                                .font(.custom("Avenir", size: 30).weight(.medium))
-                            
-                        }
-                        .padding(10)
-                        .background(Color("musiweatherOrange"))
-                        .cornerRadius(10)
+                        SongView()
+                        SongView()
+                        SongView()
+                        SongView()
+                        SongView()
+                        SongView()
+                        SongView()
                     }
                     .padding()
                 }
@@ -283,5 +110,35 @@ struct MusiWeatherView: View {
 struct MusiWeatherView_Previews: PreviewProvider {
     static var previews: some View {
         MusiWeatherView()
+    }
+}
+
+struct SongView: View {
+    var body: some View {
+        HStack {
+            Image("sampleAlbumArt")
+                .resizable()
+                .frame(width: 50, height: 50, alignment: .center)
+            
+            VStack (alignment: .leading) {
+                Text("Life In The City")
+                    .font(.custom("Avenir", size: 16).weight(.heavy))
+                Text("The Lumineers")
+                    .font(.custom("Avenir", size: 12).weight(.light))
+                Text("3:51")
+                    .font(.custom("Avenir", size: 12).weight(.heavy))
+            }
+            .foregroundColor(.white)
+            
+            Spacer()
+            
+            Image(systemName: "pause.circle")
+                .foregroundColor(.white)
+                .font(.custom("Avenir", size: 30).weight(.medium))
+            
+        }
+        .padding(10)
+        .background(Color("musiweatherOrange"))
+        .cornerRadius(10)
     }
 }
