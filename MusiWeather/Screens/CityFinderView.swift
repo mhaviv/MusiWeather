@@ -9,33 +9,38 @@ import SwiftUI
 
 struct CityFinderView: View {
     
+    @ObservedObject var cityVM: CityViewVM
+    
     var body: some View {
-        ZStack {
-            Image("musiweatherBGImage")
-                .resizable()
-            MWLogo()
-            VStack {
-                Spacer()
-                HStack{
-                    Spacer(minLength: 35)
-                    CitySearchTextField()
-
-                    Spacer(minLength: 35)
+        NavigationView {
+            ZStack {
+                Image("musiweatherBGImage")
+                    .resizable()
+                MWLogo()
+                VStack {
+                    Spacer()
+                    HStack{
+                        Spacer(minLength: 35)
+                        CitySearchTextField(cityVM: cityVM)
+                        Spacer(minLength: 35)
+                    }
+                    Spacer(minLength: 480)
                 }
-                Spacer(minLength: 480)
-            }
-            BackButton()
-        }.edgesIgnoringSafeArea(.all)
+                BackButton()
+            }.edgesIgnoringSafeArea(.all)
+        }
     }
 }
 
-struct CityFinderView_Previews: PreviewProvider {
-    static var previews: some View {
-        CityFinderView()
-    }
-}
+//struct CityFinderView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MusiWeatherView()
+//    }
+//}
 
 struct CitySearchTextField: View {
+    
+    @ObservedObject var cityVM: CityViewVM
     
     @State private var searchTerm = ""
     
@@ -51,8 +56,12 @@ struct CitySearchTextField: View {
                 TextField("", text: $searchTerm)
                     .font(.custom("Avenir", size: 16).weight(.light))
                     .foregroundColor(Color.white)
-                Image(systemName: "location")
-                    .foregroundColor(Color("musiweatherOrange"))
+                NavigationLink(
+                    destination: MusiWeatherView(cityVM: cityVM),
+                    label: {
+                        Image(systemName: "location")
+                            .foregroundColor(Color("musiweatherOrange"))
+                    })
             }
             .padding(12)
             .background(Color("textfieldBackground").cornerRadius(10))

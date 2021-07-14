@@ -8,32 +8,36 @@
 import SwiftUI
 
 struct LoginView: View {
+    @ObservedObject var cityVM: CityViewVM
+        
     var body: some View {
-        ZStack {
-            Image("musiweatherBGImage")
-                .resizable()
-            VStack {
-                Spacer()
-                Image("musiweatherLogo")
-                    .padding(.top, 20)
-//                Spacer()
-                Spacer(minLength: 530)
-            }
-            VStack {
-                Spacer(minLength: 675)
-                Button {
-                    
-                } label: {
-                    MusiWeatherButton(title: "CONNECT WITH SPOTIFY", textColor: .white, backgroundColor: "musiweatherOrange")
+        NavigationView {
+            ZStack {
+                Image("musiweatherBGImage")
+                    .resizable()
+                VStack {
+                    Spacer()
+                    Image("musiweatherLogo")
+                        .padding(.top, 20)
+                    //                Spacer()
+                    Spacer(minLength: 530)
                 }
-                Spacer()
-            }
-        }.edgesIgnoringSafeArea(.all)
+                VStack {
+                    Spacer(minLength: 675)
+                    NavigationLink(
+                        destination: CityFinderView(cityVM: cityVM),
+                        label: {
+                            MusiWeatherButton(title: "CONNECT WITH SPOTIFY", textColor: .white, backgroundColor: "musiweatherOrange")
+                        })
+                    Spacer()
+                }
+            }.edgesIgnoringSafeArea(.all)
+        }
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-    }
-}
+//struct LoginView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MusiWeatherView()
+//    }
+//}
