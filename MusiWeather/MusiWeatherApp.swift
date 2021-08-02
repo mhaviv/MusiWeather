@@ -9,15 +9,12 @@ import SwiftUI
 
 @main
 struct MusiWeatherApp: App {
-    @ObservedObject var cityVM: CityViewVM = CityViewVM()
     
-    init() {
-        
-    }
+    var weatherModel = WeatherModel()
     
     var body: some Scene {
         WindowGroup {
-            LoginView(cityVM: cityVM)
+            LoginView().environmentObject(weatherModel)
         }
     }
 }

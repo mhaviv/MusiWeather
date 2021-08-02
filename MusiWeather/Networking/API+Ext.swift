@@ -1,8 +1,8 @@
 //
-//  API+Extensions.swift
+//  API+Ext.swift
 //  MusiWeather
 //
-//  Created by Michael Haviv on 6/28/21.
+//  Created by Michael Haviv on 8/2/21.
 //
 
 import Foundation
@@ -17,6 +17,6 @@ extension API {
     ///   - lon: Longitude
     /// - Returns: URL String
     static func getURLFor(lat: Double, lon: Double) -> String {
-        return "\(baseURLString)onecall?lat=\(lat)&lon=\(lon)&exclude=minutely,hourly,daily&appid=\(key)&units=imperial"
+        return "\(baseURLString)onecall?lat=\(lat)&lon=\(lon)&exclude=minutely&appid=\(key)&units=imperial"
     }
 }

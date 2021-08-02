@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MusiWeatherView: View {
-    @ObservedObject var cityVM: CityViewVM
+    
+    @EnvironmentObject var weatherModel: WeatherModel
         
     var body: some View {
         NavigationView {
@@ -22,14 +23,14 @@ struct MusiWeatherView: View {
                             .padding(.bottom, 10)
                             .font(.custom("Avenir", size: 12).weight(.medium))
                             .foregroundColor(.white)
-                        Text(cityVM.city)
+                        Text(weatherModel.city)
                             .foregroundColor(.white)
                             .font(.custom("Avenir", size: 18).weight(.heavy))
                         Text("United States")
                             .font(.custom("Avenir", size: 12).weight(.regular))
                             .foregroundColor(.white)
                         Button {
-                            
+                            print("City Changed!")
                         } label: {
                             Text("Change City")
                                 .padding(.top, 3)
@@ -49,7 +50,7 @@ struct MusiWeatherView: View {
                                         Image("partlyCloudy")
                                             .foregroundColor(.white)
                                         HStack {
-                                            Text("Partly Cloudy")
+                                            Text(MockData.sampleCurrentWeather.current.weather[0].main)
                                                 .font(.custom("Avenir", size: 21).weight(.medium))
                                                 .foregroundColor(.white)
                                         }
@@ -58,14 +59,14 @@ struct MusiWeatherView: View {
                                         HStack {
                                             Image("temp")
                                                 .foregroundColor(.white)
-                                            Text("87°F")
+                                            Text("\(MockData.sampleCurrentWeather.current.temp, specifier: "%.2f")")
                                                 .font(.custom("Avenir", size: 12).weight(.medium))
                                                 .foregroundColor(.white)
                                         }
                                         HStack {
                                             Image("windSpeed")
                                                 .foregroundColor(.white)
-                                            Text("4 mph")
+                                            Text("\(MockData.sampleCurrentWeather.current.wind_speed, specifier: "%.2f")")
                                                 .font(.custom("Avenir", size: 12).weight(.medium))
                                                 .foregroundColor(.white)
                                         }
@@ -111,11 +112,11 @@ struct MusiWeatherView: View {
     }
 }
 
-//struct MusiWeatherView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MusiWeatherView()
-//    }
-//}
+struct MusiWeatherView_Previews: PreviewProvider {
+    static var previews: some View {
+        MusiWeatherView()
+    }
+}
 
 struct SongView: View {
     var body: some View {

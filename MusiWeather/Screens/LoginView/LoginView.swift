@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var cityVM: CityViewVM
-        
+    
+    @EnvironmentObject var weatherModel: WeatherModel
+            
     var body: some View {
         NavigationView {
             ZStack {
@@ -25,7 +26,7 @@ struct LoginView: View {
                 VStack {
                     Spacer(minLength: 675)
                     NavigationLink(
-                        destination: CityFinderView(cityVM: cityVM),
+                        destination: CityFinderView(),
                         label: {
                             MusiWeatherButton(title: "CONNECT WITH SPOTIFY", textColor: .white, backgroundColor: "musiweatherOrange")
                         })
@@ -36,8 +37,8 @@ struct LoginView: View {
     }
 }
 
-//struct LoginView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MusiWeatherView()
-//    }
-//}
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
+    }
+}

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CityFinderView: View {
     
-    @ObservedObject var cityVM: CityViewVM
-    
+    @EnvironmentObject var weatherModel: WeatherModel
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -21,7 +21,7 @@ struct CityFinderView: View {
                     Spacer()
                     HStack{
                         Spacer(minLength: 35)
-                        CitySearchTextField(cityVM: cityVM)
+                        CitySearchTextField()
                         Spacer(minLength: 35)
                     }
                     Spacer(minLength: 480)
@@ -32,32 +32,30 @@ struct CityFinderView: View {
     }
 }
 
-//struct CityFinderView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MusiWeatherView()
-//    }
-//}
+struct CityFinderView_Previews: PreviewProvider {
+    static var previews: some View {
+        CityFinderView()
+    }
+}
 
 struct CitySearchTextField: View {
     
-    @ObservedObject var cityVM: CityViewVM
-    
-    @State private var searchTerm = ""
-    
+    @EnvironmentObject var weatherModel: WeatherModel
+
     var body: some View {
         ZStack(alignment: .leading) {
-            if searchTerm.isEmpty { Text("Search City")
+            if weatherModel.searchTerm.isEmpty { Text("Search City")
                 .foregroundColor(.white)
                 .font(.custom("Avenir", size: 16))
                 .fontWeight(.light)
                 .padding(.leading, 15)
             }
             HStack {
-                TextField("", text: $searchTerm)
+                TextField("", text: $weatherModel.searchTerm)
                     .font(.custom("Avenir", size: 16).weight(.light))
                     .foregroundColor(Color.white)
                 NavigationLink(
-                    destination: MusiWeatherView(cityVM: cityVM),
+                    destination: MusiWeatherView(),
                     label: {
                         Image(systemName: "location")
                             .foregroundColor(Color("musiweatherOrange"))
