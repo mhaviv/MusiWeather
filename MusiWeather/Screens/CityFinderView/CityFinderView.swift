@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CityFinderView: View {
     
-    @EnvironmentObject var weatherModel: WeatherModel
+    @EnvironmentObject var weatherViewModel: WeatherViewModel
 
     var body: some View {
         NavigationView {
@@ -34,26 +34,29 @@ struct CityFinderView: View {
 
 struct CityFinderView_Previews: PreviewProvider {
     static var previews: some View {
-        CityFinderView()
+        CityFinderView().environmentObject(WeatherViewModel())
     }
 }
 
 struct CitySearchTextField: View {
     
-    @EnvironmentObject var weatherModel: WeatherModel
+    @EnvironmentObject var weatherViewModel: WeatherViewModel
+    
+    var placeholderText = "Search City"
+    @State private var textfieldIsSelected = false
 
     var body: some View {
         ZStack(alignment: .leading) {
-            if weatherModel.searchTerm.isEmpty { Text("Search City")
-                .foregroundColor(.white)
-                .font(.custom("Avenir", size: 16))
-                .fontWeight(.light)
-                .padding(.leading, 15)
+            if weatherViewModel.city.isEmpty || !textfieldIsSelected {
+                MWPlaceholderText(placeholderText: placeholderText)
             }
             HStack {
-                TextField("", text: $weatherModel.searchTerm)
+                TextField("", text: $weatherViewModel.city)
                     .font(.custom("Avenir", size: 16).weight(.light))
                     .foregroundColor(Color.white)
+                    .onTapGesture {
+                        textfieldIsSelected = true
+                    }
                 NavigationLink(
                     destination: MusiWeatherView(),
                     label: {
@@ -97,5 +100,18 @@ struct MWLogo: View {
             //                Spacer()
             Spacer(minLength: 748)
         }
+    }
+}
+
+struct MWPlaceholderText: View {
+    
+    var placeholderText: String
+    
+    var body: some View {
+        Text(placeholderText)
+            .foregroundColor(.white)
+            .font(.custom("Avenir", size: 16))
+            .fontWeight(.light)
+            .padding(.leading, 15)
     }
 }

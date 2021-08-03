@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MusiWeatherView: View {
     
-    @EnvironmentObject var weatherModel: WeatherModel
+    @EnvironmentObject var weatherViewModel: WeatherViewModel
         
     var body: some View {
         NavigationView {
@@ -23,7 +23,7 @@ struct MusiWeatherView: View {
                             .padding(.bottom, 10)
                             .font(.custom("Avenir", size: 12).weight(.medium))
                             .foregroundColor(.white)
-                        Text(weatherModel.city)
+                        Text(weatherViewModel.city)
                             .foregroundColor(.white)
                             .font(.custom("Avenir", size: 18).weight(.heavy))
                         Text("United States")
@@ -114,7 +114,7 @@ struct MusiWeatherView: View {
 
 struct MusiWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        MusiWeatherView()
+        MusiWeatherView().environmentObject(WeatherViewModel())
     }
 }
 

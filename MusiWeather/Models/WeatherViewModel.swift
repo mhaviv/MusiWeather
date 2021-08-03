@@ -8,10 +8,12 @@
 import SwiftUI
 import CoreLocation
 
-final class WeatherModel: ObservableObject {
+final class WeatherViewModel: ObservableObject {
     
     @Published var city = ""
-    @Published var searchTerm = ""
+    @Published var weather = WeatherResponse.empty()
+    
+    
     
     private func getLocation() {
         CLGeocoder().geocodeAddressString(city) { (placemarks, error) in
@@ -26,13 +28,13 @@ final class WeatherModel: ObservableObject {
             let urlString = API.getURLFor(lat: coord.latitude, lon: coord.longitude)
             getWeatherInternal(city: city, for: urlString)
         } else {
-            let urlString = API.getURLFor(lat: 37.5485, lon: -121.9886)
+            let urlString = API.getURLFor(lat: 40.574268, lon: -74.609879)
             getWeatherInternal(city: city, for: urlString)
         }
     }
     
     private func getWeatherInternal(city: String, for urlString: String) {
-        NetworkManager<WeatherResponse>.fetch(for: URL(string: urlString)!) { (result) in
+        NetworkManager.shared.getWeather(for: urlString) { (result) in
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {

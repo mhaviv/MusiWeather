@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CC0546DE2689885700A02695 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0546DD2689885700A02695 /* API.swift */; };
-		CC0546E02689887500A02695 /* API+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0546DF2689887500A02695 /* API+Extensions.swift */; };
-		CC0546E22689888F00A02695 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0546E12689888F00A02695 /* NetworkManager.swift */; };
-		CC0546E42689895C00A02695 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0546E32689895C00A02695 /* WeatherResponse.swift */; };
-		CC0546E62689898400A02695 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0546E52689898400A02695 /* Weather.swift */; };
-		CC0546EC268989D700A02695 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0546EB268989D700A02695 /* Temperature.swift */; };
-		CC0546EE26898BCB00A02695 /* CityViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0546ED26898BCB00A02695 /* CityViewVM.swift */; };
-		CC0546F2268ADC3C00A02695 /* WeatherDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0546F1268ADC3C00A02695 /* WeatherDetail.swift */; };
 		CC0D2E0626770A0B003D7AF0 /* MusiWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D2E0526770A0B003D7AF0 /* MusiWeatherApp.swift */; };
 		CC0D2E0826770A0B003D7AF0 /* MusiWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D2E0726770A0B003D7AF0 /* MusiWeatherView.swift */; };
 		CC0D2E0A26770A0D003D7AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC0D2E0926770A0D003D7AF0 /* Assets.xcassets */; };
@@ -22,17 +15,16 @@
 		CC91FDB726771D7D004B8E13 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC91FDB626771D7D004B8E13 /* LoginView.swift */; };
 		CC91FDB926771DA6004B8E13 /* CityFinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC91FDB826771DA6004B8E13 /* CityFinderView.swift */; };
 		CC91FDBD26772AFF004B8E13 /* MusiWeatherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC91FDBC26772AFF004B8E13 /* MusiWeatherButton.swift */; };
+		CCA195F126B79F8100A41959 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA195F026B79F8100A41959 /* WeatherResponse.swift */; };
+		CCA195F326B7ADB600A41959 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA195F226B7ADB500A41959 /* WeatherViewModel.swift */; };
+		CCA195F826B7B89000A41959 /* API+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA195F726B7B89000A41959 /* API+Ext.swift */; };
+		CCA195FA26B7B92900A41959 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA195F926B7B92900A41959 /* NetworkManager.swift */; };
+		CCA195FE26B8B1BB00A41959 /* MWError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA195FD26B8B1BB00A41959 /* MWError.swift */; };
+		CCA1960026B8B20C00A41959 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA195FF26B8B20C00A41959 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC0546DD2689885700A02695 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		CC0546DF2689887500A02695 /* API+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Extensions.swift"; sourceTree = "<group>"; };
-		CC0546E12689888F00A02695 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		CC0546E32689895C00A02695 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
-		CC0546E52689898400A02695 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
-		CC0546EB268989D700A02695 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
-		CC0546ED26898BCB00A02695 /* CityViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewVM.swift; sourceTree = "<group>"; };
-		CC0546F1268ADC3C00A02695 /* WeatherDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetail.swift; sourceTree = "<group>"; };
 		CC0D2E0226770A0A003D7AF0 /* MusiWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusiWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0D2E0526770A0B003D7AF0 /* MusiWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiWeatherApp.swift; sourceTree = "<group>"; };
 		CC0D2E0726770A0B003D7AF0 /* MusiWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiWeatherView.swift; sourceTree = "<group>"; };
@@ -42,6 +34,12 @@
 		CC91FDB626771D7D004B8E13 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CC91FDB826771DA6004B8E13 /* CityFinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityFinderView.swift; sourceTree = "<group>"; };
 		CC91FDBC26772AFF004B8E13 /* MusiWeatherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiWeatherButton.swift; sourceTree = "<group>"; };
+		CCA195F026B79F8100A41959 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		CCA195F226B7ADB500A41959 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		CCA195F726B7B89000A41959 /* API+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Ext.swift"; sourceTree = "<group>"; };
+		CCA195F926B7B92900A41959 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CCA195FD26B8B1BB00A41959 /* MWError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWError.swift; sourceTree = "<group>"; };
+		CCA195FF26B8B20C00A41959 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +72,10 @@
 		CC0D2E0426770A0A003D7AF0 /* MusiWeather */ = {
 			isa = PBXGroup;
 			children = (
+				CCA195FB26B8B19400A41959 /* Utilities */,
 				CC0D2E1626770D6E003D7AF0 /* Views */,
 				CC91FDB526771D50004B8E13 /* Screens */,
-				CC0D2E1726770D73003D7AF0 /* ViewModels */,
 				CC0D2E1526770D69003D7AF0 /* Models */,
-				CC0D2E1426770D63003D7AF0 /* Networking */,
 				CC0D2E0526770A0B003D7AF0 /* MusiWeatherApp.swift */,
 				CC0D2E0926770A0D003D7AF0 /* Assets.xcassets */,
 				CC0D2E0E26770A0E003D7AF0 /* Info.plist */,
@@ -99,8 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				CC0546DD2689885700A02695 /* API.swift */,
-				CC0546DF2689887500A02695 /* API+Extensions.swift */,
-				CC0546E12689888F00A02695 /* NetworkManager.swift */,
+				CCA195F726B7B89000A41959 /* API+Ext.swift */,
+				CCA195F926B7B92900A41959 /* NetworkManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -108,10 +105,8 @@
 		CC0D2E1526770D69003D7AF0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CC0546E32689895C00A02695 /* WeatherResponse.swift */,
-				CC0546E52689898400A02695 /* Weather.swift */,
-				CC0546F1268ADC3C00A02695 /* WeatherDetail.swift */,
-				CC0546EB268989D700A02695 /* Temperature.swift */,
+				CCA195F226B7ADB500A41959 /* WeatherViewModel.swift */,
+				CCA195F026B79F8100A41959 /* WeatherResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -119,27 +114,69 @@
 		CC0D2E1626770D6E003D7AF0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CC91FDBC26772AFF004B8E13 /* MusiWeatherButton.swift */,
+				CCA195EC26B79CFB00A41959 /* Buttons */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		CC0D2E1726770D73003D7AF0 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				CC0546ED26898BCB00A02695 /* CityViewVM.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		CC91FDB526771D50004B8E13 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				CC91FDB626771D7D004B8E13 /* LoginView.swift */,
-				CC91FDB826771DA6004B8E13 /* CityFinderView.swift */,
-				CC0D2E0726770A0B003D7AF0 /* MusiWeatherView.swift */,
+				CCA195ED26B79D0E00A41959 /* LoginView */,
+				CCA195EE26B79D1800A41959 /* CityFinderView */,
+				CCA195EF26B79D2000A41959 /* MusiWeatherView */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		CCA195EC26B79CFB00A41959 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				CC91FDBC26772AFF004B8E13 /* MusiWeatherButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		CCA195ED26B79D0E00A41959 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				CC91FDB626771D7D004B8E13 /* LoginView.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		CCA195EE26B79D1800A41959 /* CityFinderView */ = {
+			isa = PBXGroup;
+			children = (
+				CC91FDB826771DA6004B8E13 /* CityFinderView.swift */,
+			);
+			path = CityFinderView;
+			sourceTree = "<group>";
+		};
+		CCA195EF26B79D2000A41959 /* MusiWeatherView */ = {
+			isa = PBXGroup;
+			children = (
+				CC0D2E0726770A0B003D7AF0 /* MusiWeatherView.swift */,
+			);
+			path = MusiWeatherView;
+			sourceTree = "<group>";
+		};
+		CCA195FB26B8B19400A41959 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CCA195FC26B8B1A200A41959 /* Alerts */,
+				CC0D2E1426770D63003D7AF0 /* Networking */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CCA195FC26B8B1A200A41959 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				CCA195FD26B8B1BB00A41959 /* MWError.swift */,
+				CCA195FF26B8B20C00A41959 /* Alert.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,18 +248,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC0546E02689887500A02695 /* API+Extensions.swift in Sources */,
 				CC91FDB726771D7D004B8E13 /* LoginView.swift in Sources */,
-				CC0546EE26898BCB00A02695 /* CityViewVM.swift in Sources */,
 				CC0D2E0826770A0B003D7AF0 /* MusiWeatherView.swift in Sources */,
+				CCA195FA26B7B92900A41959 /* NetworkManager.swift in Sources */,
 				CC91FDBD26772AFF004B8E13 /* MusiWeatherButton.swift in Sources */,
-				CC0546E62689898400A02695 /* Weather.swift in Sources */,
-				CC0546E22689888F00A02695 /* NetworkManager.swift in Sources */,
+				CCA195F126B79F8100A41959 /* WeatherResponse.swift in Sources */,
+				CCA195F826B7B89000A41959 /* API+Ext.swift in Sources */,
+				CCA1960026B8B20C00A41959 /* Alert.swift in Sources */,
+				CCA195FE26B8B1BB00A41959 /* MWError.swift in Sources */,
 				CC0D2E0626770A0B003D7AF0 /* MusiWeatherApp.swift in Sources */,
+				CCA195F326B7ADB600A41959 /* WeatherViewModel.swift in Sources */,
 				CC0546DE2689885700A02695 /* API.swift in Sources */,
-				CC0546EC268989D700A02695 /* Temperature.swift in Sources */,
-				CC0546E42689895C00A02695 /* WeatherResponse.swift in Sources */,
-				CC0546F2268ADC3C00A02695 /* WeatherDetail.swift in Sources */,
 				CC91FDB926771DA6004B8E13 /* CityFinderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

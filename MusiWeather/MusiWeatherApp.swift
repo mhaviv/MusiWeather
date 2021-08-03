@@ -10,11 +10,11 @@ import SwiftUI
 @main
 struct MusiWeatherApp: App {
     
-    var weatherModel = WeatherModel()
+    var weatherViewModel = WeatherViewModel()
     
     var body: some Scene {
         WindowGroup {
-            LoginView().environmentObject(weatherModel)
+            LoginView().environmentObject(weatherViewModel)
         }
     }
 }

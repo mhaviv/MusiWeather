@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @EnvironmentObject var weatherModel: WeatherModel
+    @EnvironmentObject var weatherViewModel: WeatherViewModel
             
     var body: some View {
         NavigationView {

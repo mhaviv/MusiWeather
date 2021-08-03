@@ -21,6 +21,10 @@ struct WeatherResponse: Decodable {
         case timezoneOffset = "timezone_offset"
         case current
     }
+    
+    static func empty() -> WeatherResponse {
+        return WeatherResponse(lat: 0.0, lon: 0.0, timezone: "", timezoneOffset: 0, current: CurrentWeather(dt: 0, sunrise: 0, sunset: 0, temp: 0.0, feels_like: 0.0, pressure: 0.0, humidity: 0, dew_point: 0.0, uvi: 0, clouds: 0, visibility: 0, wind_speed: 0.0, wind_deg: 0, wind_gust: 0.0, weather: [Weather(id: UUID(), main: "", description: "", icon: "")]))
+    }
 }
 
 
