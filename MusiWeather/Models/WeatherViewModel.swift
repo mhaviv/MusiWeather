@@ -12,13 +12,26 @@ final class WeatherViewModel: ObservableObject {
     
     @Published var city = ""
     @Published var weather = WeatherResponse.empty()
+    @Published var alertItem: AlertItem?
+    @Published var isTextFieldLinkActive = false
     
-    
+    func locationValidation(searchTerm: String) {
+                
+        if searchTerm.isEmpty {
+            alertItem = AlertContext.emptyCity
+            return
+        }
+        
+        getLocation()
+    }
     
     private func getLocation() {
         CLGeocoder().geocodeAddressString(city) { (placemarks, error) in
             if let places = placemarks, let place = places.first {
                 self.getWeather(coord: place.location?.coordinate)
+            } else {
+                self.alertItem = AlertContext.invalidCity
+                return
             }
         }
     }
@@ -41,6 +54,7 @@ final class WeatherViewModel: ObservableObject {
                     self.weather = response
                 }
                 
+            //TODO: Add error case
             case .failure(let err):
                 print(err)
             }

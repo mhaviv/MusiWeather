@@ -27,7 +27,11 @@ struct CityFinderView: View {
                     Spacer(minLength: 480)
                 }
                 BackButton()
-            }.edgesIgnoringSafeArea(.all)
+            }
+            .edgesIgnoringSafeArea(.all)
+            .alert(item: $weatherViewModel.alertItem) { alertItem in
+                Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
+            }
         }
     }
 }
@@ -59,14 +63,23 @@ struct CitySearchTextField: View {
                     }
                 NavigationLink(
                     destination: MusiWeatherView(),
-                    label: {
+                    isActive: $weatherViewModel.isTextFieldLinkActive) {
+                    Button(action: {
+                        weatherViewModel.locationValidation(searchTerm: weatherViewModel.city)
+                    }, label: {
                         Image(systemName: "location")
                             .foregroundColor(Color("musiweatherOrange"))
                     })
+                }
             }
             .padding(12)
             .background(Color("textfieldBackground").cornerRadius(10))
             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.white, lineWidth: 1))
+        }
+        .alert(item: $weatherViewModel.alertItem) { alertItem in
+            Alert(title: alertItem.title,
+                  message: alertItem.message,
+                  dismissButton: alertItem.dismissButton)
         }
     }
 }

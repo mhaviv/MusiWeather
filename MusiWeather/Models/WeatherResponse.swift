@@ -14,12 +14,30 @@ struct WeatherResponse: Decodable {
     let timezoneOffset: Int
     var current: CurrentWeather
     
-    enum CodingKey: String {
+    enum CodingKeys: String, CodingKey {
         case lat
         case lon
         case timezone
         case timezoneOffset = "timezone_offset"
         case current
+    }
+    
+    enum CurrentWeatherKeys: String, CodingKey {
+        case date = "dt"
+        case sunrise
+        case sunset
+        case temp
+        case feelsLike = "feel_like"
+        case pressure
+        case humidity
+        case dewPoint = "dew_point"
+        case uvi
+        case clouds
+        case visibility
+        case windSpeed = "wind_speed"
+        case windDeg = "wind_deg"
+        case windGust = "wind_gust"
+        case weather
     }
     
     static func empty() -> WeatherResponse {
@@ -44,24 +62,6 @@ struct CurrentWeather: Decodable {
     var wind_deg: Int
     var wind_gust: Double
     var weather: [Weather]
-    
-    enum CodingKey: String {
-        case date = "dt"
-        case sunrise
-        case sunset
-        case temp
-        case feelsLike = "feel_like"
-        case pressure
-        case humidity
-        case dewPoint = "dew_point"
-        case uvi
-        case clouds
-        case visibility
-        case windSpeed = "wind_speed"
-        case windDeg = "wind_deg"
-        case windGust = "wind_gust"
-        case weather
-    }
 }
 
 struct Weather: Decodable, Identifiable {

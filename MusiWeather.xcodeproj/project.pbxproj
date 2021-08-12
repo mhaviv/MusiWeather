@@ -164,6 +164,7 @@
 		CCA195FB26B8B19400A41959 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CCA1960226BA4ED400A41959 /* Extensions */,
 				CCA195FC26B8B1A200A41959 /* Alerts */,
 				CC0D2E1426770D63003D7AF0 /* Networking */,
 			);
@@ -179,6 +180,13 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
+		CCA1960226BA4ED400A41959 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,6 +197,7 @@
 				CC0D2DFE26770A0A003D7AF0 /* Sources */,
 				CC0D2DFF26770A0A003D7AF0 /* Frameworks */,
 				CC0D2E0026770A0A003D7AF0 /* Resources */,
+				CCA1960126BA41E400A41959 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -242,6 +251,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CCA1960126BA41E400A41959 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CC0D2DFE26770A0A003D7AF0 /* Sources */ = {

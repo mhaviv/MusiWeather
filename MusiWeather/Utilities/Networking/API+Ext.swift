@@ -16,6 +16,6 @@ extension API {
     ///   - lon: Longitude
     /// - Returns: URL String
     static func getURLFor(lat: Double, lon: Double) -> String {
-        return "\(baseURLString)onecall?lat=\(lat)&lon=\(lon)exclude=minutely,hourly,daily&appid=\(key)&units=imperial"
+        return "\(baseURLString)onecall?lat=\(lat)&lon=\(lon)&exclude=minutely,hourly,daily&appid=\(key)&units=imperial"
     }
 }

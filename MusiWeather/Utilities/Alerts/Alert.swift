@@ -32,4 +32,9 @@ struct AlertContext {
     static let unableToComplete = AlertItem(title: Text("Server Error"),
                                             message: Text("Unable to check your request at this time. Please check your internet connection"),
                                             dismissButton: .default(Text("OK")))
+    
+    //MARK: - User Input Errors
+    static let invalidCity = AlertItem(title: Text("Invalid Location"), message: Text("The location entered is not valid. Please check the spelling is correct."), dismissButton: .default(Text("OK")))
+    
+    static let emptyCity = AlertItem(title: Text("Invalid Location"), message: Text("You must enter a location"), dismissButton: .default(Text("OK")))
 }

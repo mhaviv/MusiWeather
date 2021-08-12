@@ -8,6 +8,11 @@
 import Foundation
 
 enum MWError: Error {
+    //MARK: - User Errors
+    case invalidCity
+    case emptyCity
+    
+    //MARK: - Network Errors
     case invalidResponse
     case invalidData
     case invalidURL
