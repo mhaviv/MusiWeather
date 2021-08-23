@@ -14,6 +14,7 @@ final class WeatherViewModel: ObservableObject {
     @Published var weather = WeatherResponse.empty()
     @Published var alertItem: AlertItem?
     @Published var isTextFieldLinkActive = false
+    @Published var textfieldIsSelected = false
     
     func locationValidation(searchTerm: String) {
                 

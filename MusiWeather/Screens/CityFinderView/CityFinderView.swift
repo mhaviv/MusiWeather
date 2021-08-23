@@ -28,6 +28,10 @@ struct CityFinderView: View {
                 }
                 BackButton()
             }
+            .onTapGesture {
+                weatherViewModel.textfieldIsSelected = false
+                UIApplication.shared.endEditing()
+            }
             .edgesIgnoringSafeArea(.all)
             .alert(item: $weatherViewModel.alertItem) { alertItem in
                 Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
@@ -47,24 +51,27 @@ struct CitySearchTextField: View {
     @EnvironmentObject var weatherViewModel: WeatherViewModel
     
     var placeholderText = "Search City"
-    @State private var textfieldIsSelected = false
 
     var body: some View {
         ZStack(alignment: .leading) {
-            if weatherViewModel.city.isEmpty || !textfieldIsSelected {
-                MWPlaceholderText(placeholderText: placeholderText)
-            }
             HStack {
                 TextField("", text: $weatherViewModel.city)
+                    .placeholder(when: !weatherViewModel.textfieldIsSelected && weatherViewModel.city.isEmpty, placeholder: {
+                        Text(placeholderText)
+                    })
+                    .onTapGesture {
+                        weatherViewModel.textfieldIsSelected = true
+                        UIApplication.shared.endEditing() // resign first responder
+                    }
                     .font(.custom("Avenir", size: 16).weight(.light))
                     .foregroundColor(Color.white)
-                    .onTapGesture {
-                        textfieldIsSelected = true
-                    }
+                    .padding(.leading, 5)
                 NavigationLink(
                     destination: MusiWeatherView(),
                     isActive: $weatherViewModel.isTextFieldLinkActive) {
                     Button(action: {
+                        weatherViewModel.textfieldIsSelected = false
+                        UIApplication.shared.endEditing() // resign first responder
                         weatherViewModel.locationValidation(searchTerm: weatherViewModel.city)
                     }, label: {
                         Image(systemName: "location")
@@ -116,15 +123,15 @@ struct MWLogo: View {
     }
 }
 
-struct MWPlaceholderText: View {
-    
-    var placeholderText: String
-    
-    var body: some View {
-        Text(placeholderText)
-            .foregroundColor(.white)
-            .font(.custom("Avenir", size: 16))
-            .fontWeight(.light)
-            .padding(.leading, 15)
-    }
-}
+//struct MWPlaceholderText: View {
+//
+//    var placeholderText: String
+//
+//    var body: some View {
+//        Text(placeholderText)
+//            .foregroundColor(.white)
+//            .font(.custom("Avenir", size: 16))
+//            .fontWeight(.light)
+//            .padding(.leading, 15)
+//    }
+//}
