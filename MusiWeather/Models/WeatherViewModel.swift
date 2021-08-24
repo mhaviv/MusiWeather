@@ -53,6 +53,7 @@ final class WeatherViewModel: ObservableObject {
             case .success(let response):
                 DispatchQueue.main.async {
                     self.weather = response
+                    self.isTextFieldLinkActive = true
                 }
                 
             //TODO: Add error case

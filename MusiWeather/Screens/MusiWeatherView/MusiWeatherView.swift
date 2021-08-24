@@ -50,7 +50,7 @@ struct MusiWeatherView: View {
                                         Image("partlyCloudy")
                                             .foregroundColor(.white)
                                         HStack {
-                                            Text(MockData.sampleCurrentWeather.current.weather[0].main)
+                                            Text(weatherViewModel.weather.current.weather[0].main)
                                                 .font(.custom("Avenir", size: 21).weight(.medium))
                                                 .foregroundColor(.white)
                                         }
@@ -59,14 +59,14 @@ struct MusiWeatherView: View {
                                         HStack {
                                             Image("temp")
                                                 .foregroundColor(.white)
-                                            Text("\(MockData.sampleCurrentWeather.current.temp, specifier: "%.2f")")
+                                            Text("\(weatherViewModel.weather.current.temp, specifier: "%.2f")")
                                                 .font(.custom("Avenir", size: 12).weight(.medium))
                                                 .foregroundColor(.white)
                                         }
                                         HStack {
                                             Image("windSpeed")
                                                 .foregroundColor(.white)
-                                            Text("\(MockData.sampleCurrentWeather.current.wind_speed, specifier: "%.2f")")
+                                            Text("\(weatherViewModel.weather.current.windSpeed, specifier: "%.2f")")
                                                 .font(.custom("Avenir", size: 12).weight(.medium))
                                                 .foregroundColor(.white)
                                         }
@@ -107,7 +107,13 @@ struct MusiWeatherView: View {
                 }
                 
                 
-            }.edgesIgnoringSafeArea(.all)
+            }
+            .edgesIgnoringSafeArea(.all)
+            .alert(item: $weatherViewModel.alertItem) { alertItem in
+                Alert(title: alertItem.title,
+                      message: alertItem.message,
+                      dismissButton: alertItem.dismissButton)
+            }
         }
     }
 }
