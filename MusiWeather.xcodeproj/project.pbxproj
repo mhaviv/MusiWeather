@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D290F2DE738544191B5292C /* Pods_MusiWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E22206EF2F96F5011CADA49 /* Pods_MusiWeather.framework */; };
 		CC0546DE2689885700A02695 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0546DD2689885700A02695 /* API.swift */; };
 		CC0D2E0626770A0B003D7AF0 /* MusiWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D2E0526770A0B003D7AF0 /* MusiWeatherApp.swift */; };
 		CC0D2E0826770A0B003D7AF0 /* MusiWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D2E0726770A0B003D7AF0 /* MusiWeatherView.swift */; };
@@ -26,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16704D1F7EA3F56458EC0EA5 /* Pods-MusiWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusiWeather.release.xcconfig"; path = "Target Support Files/Pods-MusiWeather/Pods-MusiWeather.release.xcconfig"; sourceTree = "<group>"; };
+		1E22206EF2F96F5011CADA49 /* Pods_MusiWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusiWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48A1AC6D81B8124F9B1718D5 /* Pods-MusiWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusiWeather.debug.xcconfig"; path = "Target Support Files/Pods-MusiWeather/Pods-MusiWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		CC0546DD2689885700A02695 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CC0D2E0226770A0A003D7AF0 /* MusiWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusiWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0D2E0526770A0B003D7AF0 /* MusiWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiWeatherApp.swift; sourceTree = "<group>"; };
@@ -51,17 +55,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D290F2DE738544191B5292C /* Pods_MusiWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A1CBE717118FFD0CB2885AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E22206EF2F96F5011CADA49 /* Pods_MusiWeather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9FF5BD152A9C8E4124EDFBD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48A1AC6D81B8124F9B1718D5 /* Pods-MusiWeather.debug.xcconfig */,
+				16704D1F7EA3F56458EC0EA5 /* Pods-MusiWeather.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CC0D2DF926770A0A003D7AF0 = {
 			isa = PBXGroup;
 			children = (
 				CC0D2E0426770A0A003D7AF0 /* MusiWeather */,
 				CC0D2E0326770A0A003D7AF0 /* Products */,
+				A9FF5BD152A9C8E4124EDFBD /* Pods */,
+				8A1CBE717118FFD0CB2885AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,10 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC0D2E1126770A0E003D7AF0 /* Build configuration list for PBXNativeTarget "MusiWeather" */;
 			buildPhases = (
+				01866E90908E5E7E7816D0D3 /* [CP] Check Pods Manifest.lock */,
 				CC0D2DFE26770A0A003D7AF0 /* Sources */,
 				CC0D2DFF26770A0A003D7AF0 /* Frameworks */,
 				CC0D2E0026770A0A003D7AF0 /* Resources */,
 				CCA1960126BA41E400A41959 /* ShellScript */,
+				DA08082BACD6E55413481E38 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +286,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		01866E90908E5E7E7816D0D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MusiWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CCA1960126BA41E400A41959 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,6 +324,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "TAGS=\"TODO:|FIXME:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"\n\n";
+		};
+		DA08082BACD6E55413481E38 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MusiWeather/Pods-MusiWeather-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MusiWeather/Pods-MusiWeather-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MusiWeather/Pods-MusiWeather-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -421,6 +487,7 @@
 		};
 		CC0D2E1226770A0E003D7AF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48A1AC6D81B8124F9B1718D5 /* Pods-MusiWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -443,6 +510,7 @@
 		};
 		CC0D2E1326770A0E003D7AF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16704D1F7EA3F56458EC0EA5 /* Pods-MusiWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
